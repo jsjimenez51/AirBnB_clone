@@ -3,13 +3,123 @@
 This module defines the Console Interpreter for the HBNB Clone
 """
 import cmd
+import json
+from models import storage
+from models.engine.file_storage import FileStorage
+from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
     """
     The HBNBCommand Class that defines Commands that can be executed
     """
-    prompt = '(hbnb)'
+    prompt = '(hbnb) '
+    classnames = ["BaseModel"]
+
+    def do_create(self, arg):
+        """
+        Creates a new instance of specified class
+        """
+        if len(arg) == 0:
+            print("** class name missing **")
+        elif arg not in self.classnames:
+            print("** class doesn't exist **")
+            return
+        else:
+            new_insta = eval("{}()".format(arg))
+            new_insta.save()
+            print(new_insta.id)
+
+    def help_create(self):
+        """
+        Documentation for create usage
+        """
+        print("create <classname> : to create a new class instance\n")
+
+    def do_show(self, line):
+        """
+        Prints the string representation of an instance
+        """
+        arg = line.split()
+        if len(arg) == 0:
+            print("** class name missing **")
+            return
+        elif arg[0] not in self.classnames:
+            print("** class doesn't exist **")
+            return
+        elif len(arg) < 2:
+            print("** instance id missing **")
+            return
+        instance_obj = storage.all()
+        key_check = "{}.{}".format(arg[0], arg[1])
+        if key_check not in instance_obj.keys():
+            print("** no instance found **")
+            return
+        print(key_check)
+
+    def help_show(self):
+        """
+        Documentation for ( show ) usage
+        """
+        print("show <classname> <id> : print string\
+              representation of instance\n")
+
+    def do_destroy(self, line):
+        """
+        Deletes an instance and saves to JSON file
+        """
+        arg = line.split()
+        if len(arg) == 0:
+            print("** class name missing **")
+            return
+        elif arg[0] not in self.classnames:
+            print("** class doesn't exist **")
+            return
+        elif len(arg) < 2:
+            print("** instance id missing **")
+            return
+        else:
+            instance_obj = storage.all()
+            key_check = "{}.{}".format(arg[0], arg[1])
+            if key_check not in instance_obj.keys():
+                print("** no instance found **")
+                return
+            else:
+                instance_obj.pop(key_check)
+                storage.save()
+                return
+
+    def help_destroy(self):
+        """
+        Documentation for ( destroy ) usage
+        """
+        print("destroy <classname> <id> : deletes an instance\n")
+
+    def do_all(self, line):
+        """
+        Prints all string representation of all instances based or not on the
+        class name
+        """
+        arg = line.split()
+        my_list = []
+        if len(arg) == 0:
+            for i in storage.all():
+                my_list.append(str(storage.all()[i]))
+        else:
+            if arg[0] not in self.classnames:
+                print("** class doesn't exist **")
+            else:
+                for i in storage.all():
+                    if i.startswith(arg[0]):
+                        my_list.append(str(storage.all()[i]))
+        print(my_list)
+
+    def help_all(self):
+        """
+        Documentation for ( all ) usage
+        """
+        print("Prints all string representations of all instances \
+              based or not on class name\n")
 
     def do_quit(self, arg):
         """
@@ -34,7 +144,7 @@ class HBNBCommand(cmd.Cmd):
         """
         Documentation for ( Ctrl-D ) usage
         """
-        print("EOF command: EOF or (Ctrl-D) to exit the program\n")
+        print("EOF command or (Ctrl-D) to exit the program\n")
 
     def emptyline(self):
         """
