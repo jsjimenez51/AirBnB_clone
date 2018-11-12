@@ -29,7 +29,7 @@ class FileStorage():
         """
         Sets new object in dictionary with the formatted key
         """
-        obj = self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)]
+        self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
 
     def save(self):
         """
