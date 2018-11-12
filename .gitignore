@@ -1,0 +1,7 @@
+# Testing Files #
+#################
+test_*.py
+
+# Garbage Temp Files #
+######################
+*.py~
