@@ -1,6 +1,8 @@
-# Testing Files #
-#################
+# Testing/Compiled Files #
+##########################
 test_*.py
+*.pyc
+/./*.pyc
 
 # Garbage Temp Files #
 ######################
@@ -10,3 +12,7 @@ test_*.py
 # Local JSON File #
 ###################
 file.json
+
+# Cached Files #
+################
+__pycache__
