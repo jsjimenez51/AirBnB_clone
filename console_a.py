@@ -8,14 +8,14 @@ import shlex
 from models import storage
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
-
+from models.user import User
 
 class HBNBCommand(cmd.Cmd):
     """
     The HBNBCommand Class that defines Commands that can be executed
     """
     prompt = '(hbnb) '
-    classnames = ["BaseModel"]
+    classnames = ["BaseModel", "User"]
 
     def do_create(self, arg):
         """
