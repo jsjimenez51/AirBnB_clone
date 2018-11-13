@@ -5,3 +5,8 @@ test_*.py
 # Garbage Temp Files #
 ######################
 *.py~
+**
+
+# Local JSON File #
+###################
+file.json
