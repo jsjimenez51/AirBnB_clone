@@ -12,4 +12,4 @@ class State(BaseModel):
     Public Attributes Initialized:
     (str) name: empty
     """
-    name = " "
+    name = ""
