@@ -16,6 +16,6 @@ class User(BaseModel):
     (str) las_name: empty
     """
     email = ""
-    passowrd = ""
+    password = ""
     first_name = ""
     last_name = ""
