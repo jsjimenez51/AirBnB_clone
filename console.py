@@ -2,6 +2,7 @@
 """
 This module defines the Console Interpreter for the HBNB Clone
 """
+import shlex
 import cmd
 import json
 from models import storage
@@ -40,7 +41,7 @@ class HBNBCommand(cmd.Cmd):
         """
         Prints the string representation of an instance
         """
-        arg = line.split()
+        arg = shlex.split(line)
         if len(arg) == 0:
             print("** class name missing **")
             return
@@ -55,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
         if key_check not in instance_obj.keys():
             print("** no instance found **")
             return
-        print(key_check)
+        print(instance_obj[key_check])
 
     def help_show(self):
         """
@@ -68,7 +69,7 @@ class HBNBCommand(cmd.Cmd):
         """
         Deletes an instance and saves to JSON file
         """
-        arg = line.split()
+        arg = shlex.split(line)
         if len(arg) == 0:
             print("** class name missing **")
             return
@@ -100,7 +101,7 @@ class HBNBCommand(cmd.Cmd):
         Prints all string representation of all instances based or not on the
         class name
         """
-        arg = line.split()
+        arg = shlex.split(line)
         my_list = []
         if len(arg) == 0:
             for i in storage.all():
@@ -112,7 +113,8 @@ class HBNBCommand(cmd.Cmd):
                 for i in storage.all():
                     if i.startswith(arg[0]):
                         my_list.append(str(storage.all()[i]))
-        print(my_list)
+        if my_list != []:
+        	print(my_list)
 
     def help_all(self):
         """
@@ -120,6 +122,41 @@ class HBNBCommand(cmd.Cmd):
         """
         print("Prints all string representations of all instances \
               based or not on class name\n")
+
+    def do_update(self, line):
+        """
+        Updates an instance based on the class name and id by adding
+        or updating attribute (save change into the JSON file).
+        """
+        arg = shlex.split(line)
+        if len(arg) == 0:
+            print("** class name missing **")
+            return
+        if arg[0] not in self.classnames:
+            print("** class doesn't exist **")
+            return
+        if len(arg) == 1:
+            print("** instance id missing **")
+            return
+        else:
+            instance_obj = storage.all()
+            key_check = "{}.{}".format(arg[0], arg[1])
+            if key_check not in instance_obj.keys():
+                print("** no instance found **")
+                return
+        if len(arg) == 2:
+            print("** attribute name missing **")
+            return
+        if len(arg) == 3:
+            print("** value missing **")
+            return
+        value = instance_obj[key_check]
+        try:
+            attr = getattr(value, arg[2])
+            setattr(value, arg[2], type(attr)(arg[3]))
+        except:
+            setattr(value, arg[2], arg[3])
+        storage.save()
 
     def do_quit(self, arg):
         """
