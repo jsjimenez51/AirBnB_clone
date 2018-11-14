@@ -15,12 +15,13 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
+
 class HBNBCommand(cmd.Cmd):
     """
     The HBNBCommand Class that defines Commands that can be executed
     """
     prompt = '(hbnb) '
-    classnames = ["BaseModel", "User", "State",\
+    classnames = ["BaseModel", "User", "State",
                   "City", "Amenity", "Place", "Review"]
 
     def do_create(self, arg):
@@ -120,7 +121,7 @@ class HBNBCommand(cmd.Cmd):
                     if i.startswith(arg[0]):
                         my_list.append(str(storage.all()[i]))
         if my_list != []:
-        	print(my_list)
+            print(my_list)
 
     def help_all(self):
         """
