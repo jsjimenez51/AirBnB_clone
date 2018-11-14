@@ -12,6 +12,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
+
 class FileStorage():
     """
     The FileStorage Class that defines attributes and methods for
