@@ -1,6 +1,5 @@
 # Testing/Compiled Files #
 ##########################
-test_*.py
 *.pyc
 /./*.pyc
 
