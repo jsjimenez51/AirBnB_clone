@@ -7,6 +7,7 @@ import os
 import pep8
 from models.city import City
 
+
 class test_CityModel(unittest.TestCase):
     """
     Defines Test Cases for City Class
