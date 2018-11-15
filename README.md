@@ -47,10 +47,10 @@ the storage engine.
 | `review.py` | The module for the Review Class | [models/review.py](models/review.py) |
 | `state.py` | The module for the State Class | [models/state.py](models/state.py) |
 | `user.py` | The module for the User Class | [models/user.py](models/user.py)                    |
-| `file_storage.py` | The module for the Storage Engine |\
-[models/engine/file_storage.py](models/engine/file_storage.py) |
+| `file_storage.py` | The module for the Storage Engine | [models/engine/file_storage.py](models/engine/file_storage.py) |
 
 #### Unittest Files:
+| Test File | Hierarchy |
 | -------------- |:--------------:|
 | `test_amenity.py` | [tests/test_models/test_amenity.py](tests/test_models/test_amenity.py) |
 | `test_base_model.py`   | [tests/test_models/test_base_model.py](tests/test_models/test_base_model.py) |
