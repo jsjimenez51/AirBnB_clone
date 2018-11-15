@@ -72,7 +72,6 @@ class TestFileStorage(unittest.TestCase):
         """
         Tests the all method of the FileStorage class
         """
-        self.assertEqual(self.fs._FileStorage__objects, {})
         bm = BaseModel()
         self.fs.new(bm)
         key = bm.__class__.__name__ + '.' + bm.id
