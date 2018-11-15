@@ -41,7 +41,6 @@ class TestFileStorage(unittest.TestCase):
         Setup class instance for tests
         """
         cls.fs = FileStorage()
-        cls.bm = BaseModel()
 
     @classmethod
     def tearDown(cls):
@@ -49,7 +48,6 @@ class TestFileStorage(unittest.TestCase):
         Tears down created classes
         """
         del cls.fs
-        del cls.bm
 
     def tearDown(self):
         """
@@ -64,38 +62,39 @@ class TestFileStorage(unittest.TestCase):
         """
         Tests the attributes of the FileStorage class
         """
-        key = self.bm.__class__.__name__ + '.' + self.bm.id
-        target_dict = {key: self.bm}
+        bm = BaseModel()
+        key = bm.__class__.__name__ + '.' + bm.id
         self.assertEqual(
             self.fs._FileStorage__file_path, 'file.json')
-        self.assertEqual(
-            self.fs._FileStorage__objects, target_dict)
+        self.assertIn(key, self.fs._FileStorage__objects.keys())
 
     def test_all(self):
         """
         Tests the all method of the FileStorage class
         """
-        self.fs.new(self.bm)
-        key = self.bm.__class__.__name__ + '.' + self.bm.id
-        target_dict = {key: self.bm}
-        self.assertEqual(self.fs._FileStorage__objects, target_dict)
+        self.assertEqual(self.fs._FileStorage__objects, {})
+        bm = BaseModel()
+        self.fs.new(bm)
+        key = bm.__class__.__name__ + '.' + bm.id
+        self.assertIn(key, self.fs._FileStorage__objects.keys())
 
     def test_new(self):
         """
         Tests the new method of the FileStorage class
         """
-        key = self.bm.__class__.__name__ + '.' + self.bm.id
-        self.fs.new(self.bm)
-        target_dict = {key: self.bm}
-        self.assertEqual(self.fs._FileStorage__objects, target_dict)
+        bm = BaseModel()
+        key = bm.__class__.__name__ + '.' + bm.id
+        self.fs.new(bm)
+        self.assertIn(key, self.fs._FileStorage__objects.keys())
 
     def test_save(self):
         """
         Tests the save method of the FileStorage class
         """
-        self.fs.new(self.bm)
+        bm = BaseModel()
+        self.fs.new(bm)
         self.fs.save()
-        key = self.bm.__class__.__name__ + '.' + self.bm.id
+        key = bm.__class__.__name__ + '.' + bm.id
         with open('file.json', mode='r') as json_file:
             new_dict = json.load(json_file)
         self.assertIn(key, new_dict.keys())
@@ -104,10 +103,11 @@ class TestFileStorage(unittest.TestCase):
         """
         Tests the reload method of the FileStorage class
         """
-        self.fs.new(self.bm)
+        bm = BaseModel()
+        self.fs.new(bm)
         self.fs.save()
         self.fs.reload()
-        key = self.bm.__class__.__name__ + '.' + self.bm.id
+        key = bm.__class__.__name__ + '.' + bm.id
         with open('file.json', mode='r') as json_file:
             new_dict = json.load(json_file)
         self.assertIn(key, new_dict.keys())
