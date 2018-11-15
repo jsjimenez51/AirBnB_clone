@@ -7,6 +7,7 @@ import os
 import pep8
 from models.state import State
 
+
 class test_StateModel(unittest.TestCase):
     """
     Defines Test Cases for State Class
