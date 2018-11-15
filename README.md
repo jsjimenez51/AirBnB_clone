@@ -65,7 +65,7 @@ the storage engine.
 
 ### Installation
 ```
-git@github.com:jogden4195/AirBnB_clone.git
+git clone git@github.com:jogden4195/AirBnB_clone.git
 ```
 
 ---
@@ -96,7 +96,9 @@ git@github.com:jogden4195/AirBnB_clone.git
 ```
 ---
 
-### Examples
+### Example Usage:
+
+#### Interactive Mode
 ```
 $ ./console.py
 
@@ -114,6 +116,33 @@ $ ./console.py
 (hbnb) all
 ["[User] (4519fc05-a69b-4496-85fb-c0aebccd00b3) {'first_name': 'Jenn', 'updated_at': datetime.datetime(2018, 11, 15, 6, 55, 28, 570448), 'created_at': datetime.datetime(2018, 11, 15, 6, 55, 28, 570423), 'id': '4519fc05-a69b-4496-85fb-c0aebccd00b3'}", "[BaseModel] (38eadc6a-1c05-4a5f-9c5e-66dfcd0671e2) {'id': '38eadc6a-1c05-4a5f-9c5e-66dfcd0671e2', 'updated_at': datetime.datetime(2018, 11, 15, 6, 51, 19, 138448), 'created_at': datetime.datetime(2018, 11, 15, 6, 51, 19, 138425), '__class__': 'BaseModel'}", "[User] (69a81cf3-d68c-4fe0-998c-ae511bf3e8b2) {'first_name': '=', 'updated_at': datetime.datetime(2018, 11, 15, 6, 53, 51, 705678), 'created_at': datetime.datetime(2018, 11, 15, 6, 53, 51, 705654), '__class__': 'User', 'id': '69a81cf3-d68c-4fe0-998c-ae511bf3e8b2'}", "[BaseModel] (e9616e57-12da-42d5-ade8-b0c6aba20bec) {'id': 'e9616e57-12da-42d5-ade8-b0c6aba20bec', 'updated_at': datetime.datetime(2018, 11, 15, 6, 51, 49, 563214), 'created_at': datetime.datetime(2018, 11, 15, 6, 51, 49, 563187), '__class__': 'BaseModel'}"]
 (hbnb)
+```
+
+#### Non-Interactive Mode
+```
+$ echo "help" | ./console.py
+(hbnb)
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show  update
+
+(hbnb) $
+$
+$ echo "create User" | ./console.py
+(hbnb) 9b819e53-74bf-4ec7-97a7-1b42704a7dfb
+(hbnb)
+$
+$ echo "all" | ./console.py
+(hbnb) ["[User] (69a81cf3-d68c-4fe0-998c-ae511bf3e8b2) {'id': '69a81cf3-d68c-4fe0-998c-ae511bf3e8b2', 'created_at': datetime.datetime(2018, 11, 15, 6, 53, 51, 705654), 'first_name': '=', '__class__': 'User', 'updated_at': datetime.datetime(2018, 11, 15, 6, 53, 51, 705678)}", "[BaseModel] (38eadc6a-1c05-4a5f-9c5e-66dfcd0671e2) {'id': '38eadc6a-1c05-4a5f-9c5e-66dfcd0671e2', 'created_at': datetime.datetime(2018, 11, 15, 6, 51, 19, 138425), 'updated_at': datetime.datetime(2018, 11, 15, 6, 51, 19, 138448), '__class__': 'BaseModel'}", "[User] (5927a4e1-c08f-4a7d-a5f8-9ce45596e271) {'id': '5927a4e1-c08f-4a7d-a5f8-9ce45596e271', 'created_at': datetime.datetime(2018, 11, 15, 15, 16, 0, 979423), '__class__': 'User', 'updated_at': datetime.datetime(2018, 11, 15, 15, 16, 0, 979433)}"]
+(hbnb) $
+$
+$ echo "destroy User 69a81cf3-d68c-4fe0-998c-ae511bf3e8b2" | ./console.py
+(hbnb) (hbnb) $
+
+$ echo "all" | ./console.py
+(hbnb) []
+(hbnb) $
+$
 ```
 ---
 
