@@ -41,7 +41,7 @@ the storage engine.
 | --------------- | -------------- |:--------------:|
 | `console.py` | The main file for the console | [console.py](console.py) |
 | `amenity.py` | The module for the Amenity Class | [models/amenity.py](models/amenity.py) |
-| `base_model.py' | The module for the Base Model Class | [models/base_model.py](models/base_model.py) |
+| `base_model.py` | The module for the Base Model Class | [models/base_model.py](models/base_model.py) |
 | `city.py` | The module for the City Class | [models/city.py](models/city.py) |
 | `place.py` | The module for the Place Class | [models/place.py](models/place.py) |
 | `review.py` | The module for the Review Class | [models/review.py](models/review.py) |
@@ -85,15 +85,15 @@ git@github.com:jogden4195/AirBnB_clone.git
 ---
 
 ### Command Usage
-
-**create** - create <class name>
-**show** - show <class name> <id>
-**destroy** - destroy <class name> <id>
-**all** - all or all <class name>
-**update** - update <class name> <id> <attribute name> "<attribute value">
-**quit** - quit
-**EOF** - EOF / Ctrl - D / Ctrl - Z
-
+```
+*create* - create <class name>
+*show* - show <class name> <id>
+*destroy* - destroy <class name> <id>
+*all* - all or all <class name>
+*update* - update <class name> <id> <attribute name> "<attribute value">
+*quit* - quit
+*EOF* - EOF / Ctrl - D / Ctrl - Z
+```
 ---
 
 ### Examples
