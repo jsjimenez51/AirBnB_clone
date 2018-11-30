@@ -1,4 +1,7 @@
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   height: 60px;
   width: 100%;
@@ -6,8 +9,3 @@ footer {
   position: fixed;
   bottom: 0;
   }
-
-p {
-  text-align: center;
-  line-height: 30px;
-}
