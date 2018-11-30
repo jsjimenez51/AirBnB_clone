@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles/4-common.css">
+    <link rel="stylesheet" href="styles/3-header.css">
+    <link rel="stylesheet" href="styles/6-filters.css">
+    <link rel="stylesheet" href="styles/3-footer.css">
+    <link rel="stylesheet" href="styles/7-places.css">
+    <link rel="browser tab icon" href="images/icon.png" type="image/png">
+    <meta charset="utf-8">
+    <title>AirBnB clone</title>
+  </head>
+  <body>
+    <header>
+      <div class="head_logo"></div>
+    </header>
+
+      <div class="container">
+        <section class="filters">
+
+          <div class="filter_wrapper">
+
+            <div class="locations">
+              <h3 class="filter_title">States</h3>
+              <h4 class="filter_subtitle">California, Hawaii, Oregon...</h4>
+            </div>
+            <div class="amenities">
+              <h3 class="filter_title">Amenities</h3>
+              <h4 class="filter_subtitle">A/C, WiFi, Jacuzzi...</h4>
+            </div>
+            <div class="empty">
+            </div>
+            <button class="search_button">Search</button>
+
+
+            <div id="loc_pop" class="popover">
+              <ul class="pop_list">
+                <li>California:</li>
+                  <ul class="pop_sublist">
+                    <li>Los Angeles</li>
+                    <li>Sacramento</li>
+                    <li>San Diego</li>
+                    <li>San Francisco</li>
+                  </ul>
+                <li>Hawaii</li>
+                  <ul class="pop_sublist">
+                    <li>Kona</li>
+                    <li>Honolulu</li>
+                    <li>Maui</li>
+                  </ul>
+                <li>Las Vegas</li>
+                  <ul class="pop_sublist">
+                    <li>Las Vegas</li>
+                    <li>Reno</li>
+                  </ul>
+                <li>Oregon</li>
+                  <ul class="pop_sublist">
+                    <li>Bend</li>
+                    <li>Portland</li>
+                  </ul>
+              </ul>
+            </div>
+
+            <div id="amen_pop" class="popover">
+              <ul class="pop_sublist">
+                <li>Air Conditioning</li>
+                <li>Fire Place</li>
+                <li>Garage Parking</li>
+                <li>Internet</li>
+                <li>Iron</li>
+                <li>Jacuzzi</li>
+                <li>Kitchen</li>
+                <li>Patio</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </section>
+
+        <section class="places">
+          <h1 class="places_title">Places</h1>
+          <div class="place_cards">
+            <article class="place_info">
+              <h2>My Home</h2>
+            </article>
+            <article class="place_info">
+              <h2>Tiny house</h2>
+            </article>
+            <article class="place_info">
+              <h2>A suite</h2>
+            </article>
+          </div>
+        </section>
+      </div>
+
+    <footer>
+      <p>
+        Holberton School
+      </p>
+    </footer>
+  </body>
+</html>
