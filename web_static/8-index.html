@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles/4-common.css">
+    <link rel="stylesheet" href="styles/3-header.css">
+    <link rel="stylesheet" href="styles/6-filters.css">
+    <link rel="stylesheet" href="styles/3-footer.css">
+    <link rel="stylesheet" href="styles/8-places.css">
+    <link rel="browser tab icon" href="images/icon.png" type="image/png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AirBnB clone</title>
+  </head>
+  <body>
+    <header>
+      <div class="head_logo"></div>
+    </header>
+
+      <div class="container">
+        <section class="filters">
+
+          <div class="filter_wrapper">
+
+            <div class="locations">
+              <h3 class="filter_title">States</h3>
+              <h4 class="filter_subtitle">California, Hawaii, Oregon...</h4>
+            </div>
+            <div class="amenities">
+              <h3 class="filter_title">Amenities</h3>
+              <h4 class="filter_subtitle">A/C, WiFi, Jacuzzi...</h4>
+            </div>
+            <div class="empty">
+            </div>
+            <button class="search_button">Search</button>
+
+
+            <div id="loc_pop" class="popover">
+              <ul class="pop_list">
+                <li>California:</li>
+                  <ul class="pop_sublist">
+                    <li>Los Angeles</li>
+                    <li>Sacramento</li>
+                    <li>San Diego</li>
+                    <li>San Francisco</li>
+                  </ul>
+                <li>Hawaii</li>
+                  <ul class="pop_sublist">
+                    <li>Kona</li>
+                    <li>Honolulu</li>
+                    <li>Maui</li>
+                  </ul>
+                <li>Las Vegas</li>
+                  <ul class="pop_sublist">
+                    <li>Las Vegas</li>
+                    <li>Reno</li>
+                  </ul>
+                <li>Oregon</li>
+                  <ul class="pop_sublist">
+                    <li>Bend</li>
+                    <li>Portland</li>
+                  </ul>
+              </ul>
+            </div>
+
+            <div id="amen_pop" class="popover">
+              <ul class="pop_sublist">
+                <li>Air Conditioning</li>
+                <li>Fire Place</li>
+                <li>Garage Parking</li>
+                <li>Internet</li>
+                <li>Iron</li>
+                <li>Jacuzzi</li>
+                <li>Kitchen</li>
+                <li>Patio</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </section>
+
+        <section class="places">
+        <h1 class="places_title">Places</h1>
+        <div class="place_cards">
+
+          <article class="place_info">
+            <div class="price_by_night">$69</div>
+            <h2 class="card_title">Urban & Rustic</h2>
+            <div class="information">
+              <div class="max_guest info_logo">
+                <div class="card_logo guests"></div>
+                <p>4 Guests</p>
+              </div>
+              <div class="number_rooms info_logo">
+                <div class="card_logo rooms"></div>
+                <p>2 Bedrooms</p>
+              </div>
+              <div class="number_bathrooms info_logo">
+                <div class="card_logo bathrooms"></div>
+                <p>2 Bathrooms</p>
+              </div>
+            </div>
+            <div class="user"><b>Owner:</b> Josh Jimenez </div>
+            <div class="description">Urban, sophisticated, and rustic contemporary styled home.  Has 2 bedrooms and 2 bathrooms located on the outskirts of the Downtown Sacramento Grid.  If the location is not enough for you, the locally famous Track 7 brewery is located next door.</div>
+          </article>
+
+          <article class="place_info">
+            <div class="price_by_night">$808</div>
+            <h2 class="card_title">Island Getaway</h2>
+            <div class="information">
+              <div class="max_guest info_logo">
+                <div class="card_logo guests"></div>
+                <p>6 Guests</p>
+              </div>
+              <div class="number_rooms info_logo">
+                <div class="card_logo rooms"></div>
+                <p>3 Bedrooms</p>
+              </div>
+              <div class="number_bathrooms info_logo">
+                <div class="card_logo bathrooms"></div>
+                <p>2 Bathrooms</p>
+              </div>
+            </div>
+            <div class="user"><b>Owner:</b> Dwayne "The Rock" Johnson</div>
+            <div class="description">A true getaway experience awaits you in this Over-water Bungelow located on the Island of Maui in Hawaii.  A secluded resort experience for up to 6 on your own private beach.</div>
+          </article>
+
+          <article class="place_info">
+            <div class="price_by_night">$702</div>
+            <h2 class="card_title">VIP Condo</h2>
+            <div class="information">
+              <div class="max_guest info_logo">
+                <div class="card_logo guests"></div>
+                <p>6 Guests</p>
+              </div>
+              <div class="number_rooms info_logo">
+                <div class="card_logo rooms"></div>
+                <p>3 Bedrooms</p>
+              </div>
+              <div class="number_bathrooms info_logo">
+                <div class="card_logo bathrooms"></div>
+                <p>3 Bathrooms</p>
+              </div>
+            </div>
+            <div class="user"><b>Owner:</b> Beyonce Carter</div>
+            <div class="description">Ready to get in formation on the Las Vegas Strip! Well ladies take that ring off your finger and get that contouring on cuz its time to party!</div>
+          </article>
+
+        </div>
+        </section>
+      </div>
+
+    <footer>
+      <p>
+        Holberton School
+      </p>
+    </footer>
+  </body>
+</html>
